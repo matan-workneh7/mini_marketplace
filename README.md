@@ -99,19 +99,29 @@ mini_marketplace/
 
 ## Current Status
 
-### ✅ Completed
-- Django project setup
-- Virtual environment configuration
-- DRF and JWT installation
-- Database setup
-- Basic project structure
+### ✅ Completed Features
+- **Django Project Setup** - Virtual environment, DRF, JWT configured
+- **Database Models** - Category and Product models with relationships
+- **API Endpoints** - Full CRUD for products and categories
+- **Authentication** - JWT registration and login system
+- **Security** - Owner permissions and protected endpoints
 
-### 🚧 In Progress
-- Category model implementation
-- Product model implementation
-- Authentication system
+### � Working API Endpoints
+- `GET /api/categories/` - List all categories
+- `POST /api/categories/` - Create category (auth required)
+- `GET /api/products/` - List all products  
+- `POST /api/products/` - Create product (auth required)
+- `PUT /api/products/<id>/` - Update product (owner only)
+- `DELETE /api/products/<id>/` - Delete product (owner only)
+- `POST /api/register/` - User registration
+- `POST /api/login/` - User login (JWT tokens)
 
-### 📋 Planned
+### 🛡️ Security Features
+- JWT authentication for protected endpoints
+- Owner-based permissions (users can only modify their products)
+- Password hashing and secure token generation
+
+### 📋 Planned (Future Development)
 - Cart system
 - Order system
 - Advanced features (filtering, pagination)
