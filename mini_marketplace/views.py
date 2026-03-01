@@ -82,6 +82,10 @@ class CartItemViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         cart, created = Cart.objects.get_or_create(user=self.request.user)
         return CartItem.objects.filter(cart=cart)
+    
+    def perform_create(self, serializer):
+        cart, created = Cart.objects.get_or_create(user=self.request.user)
+        serializer.save(cart=cart)
 
 class OrderViewSet(viewsets.ModelViewSet):
     serializer_class = OrderSerializer
